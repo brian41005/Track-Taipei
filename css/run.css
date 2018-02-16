@@ -1,0 +1,142 @@
+body {
+    position: relative;
+}
+
+.map-content {
+    position: relative;
+}
+
+.map-content img {
+    width: 100%;
+}
+
+.point1 {
+    top: 25%;
+    left: 25%;
+}
+
+.point2 {
+    top: 30%;
+    left: 40%;
+}
+
+.point3 {
+    top: 60%;
+    left: 50%;
+}
+
+.point4 {
+    top: 40%;
+    left: 50%;
+}
+
+.point5 {
+    top: 40%;
+    left: 20%;    
+}
+
+.point1:hover, .point2:hover, .point3:hover, .point4:hover, .point5:hover {
+    transform: scale(1.4);
+}
+
+.point1 img, .point2 img, .point3 img, .point4 img, .point5 img {
+    transform: translatey(0px);
+	animation: float 2s ease-in-out infinite;
+}
+
+.frame-content {
+    color: black;
+    width: 100%;
+    height: 1000px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    display: none;
+    text-align: center;
+}
+
+.close-icon {
+    animation: float-icon 2s ease-in-out infinite;
+}
+
+.close-icon:hover {
+    cursor: pointer;
+}
+
+.hide-container {
+    background-color: white;
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    display: none;
+}
+
+@media (max-width: 1199px) { 
+    .point1, .point2, .point3, .point4, .point5 {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        transition: all .3s ease-in-out;
+    }
+}
+
+@media (max-width: 788px) { 
+    .point1, .point2, .point3, .point4, .point5 {
+        position: absolute;
+        width: 125px;
+        height: 125px;
+        transition: all .3s ease-in-out;
+    }
+}
+
+@media (max-width: 575px) { 
+    .point1, .point2, .point3, .point4, .point5 {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        transition: all .3s ease-in-out;
+    }
+}
+
+
+
+
+
+
+
+@keyframes ffff {
+	0% {
+        transform: scale(1);
+	}
+	50% {
+        transform: scale(1.5);
+	}
+	100% {
+        transform: scale(1);
+	}
+}
+
+
+@keyframes float-icon {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(10px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}

@@ -1,21 +1,204 @@
-* {
-    background-color: black;
+body {
+    background-color: white;
     color: white;
     margin: 0;
     padding: 0;
     font-size: 32px;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 
-.container ul {
-    list-style: none;
-    display: block;
-    overflow: hidden;
-    text-align: center;
+p {
     margin: 0;
     padding: 0;
 }
 
-.container ul li {
-    display: inline-block;
-    padding: 20px;
+.container, .track-container {
+    margin: 0 auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 30px;
+}
+
+.image-content {
+    display: grid;
+    grid-template-columns: 10% 90%;
+}
+
+.image-content .road-text-image {
+    width: 100%;
+    margin-top: 90%;
+}
+
+.image-content .main-image {
+    width: 100%;
+}
+
+.functionailty-area p {
+    margin-top: 5%;
+    font-size: 15px;
+    color: #0a418c;
+    display: none;
+}
+
+
+button {
+    color: #0faa69;
+    font-weight: bold;
+    background-color: white;
+    border: 2px solid #0faa69;
+    border-radius: 30px;
+    font-size: 24px;
+    box-sizing: border-box;
+    height: 50px;
+    width: 100px
+}
+
+
+button:hover {
+    color: white;
+    background-color: #0faa69;
+    cursor: pointer;  
+    opacity: 0.5; 
+}
+
+.buttonHover {
+    color: white;
+    background-color: #0faa69;   
+    opacity: 50%; 
+}
+
+.intro-content {
+    text-align: justify;
+    margin-top: 40px;
+    color: #0a418c;
+}
+
+.intro-content p {
+    font-size: 15px;
+}
+
+.music-content {
+    margin-top: 40px;
+}
+
+.map-content {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.track-container {
+    display: none;
+}
+
+.track-content {
+    position: relative;
+    color: black;
+}
+
+.track-content img {
+    width: 100%;
+    height: auto;
+}
+
+#track-iframe1, #track-iframe2, #track-iframe3, #track-iframe4, #track-iframe5 {
+    display: none;
+}
+
+
+@media (min-width: 1200px) { 
+    .point1, .point2, .point3, .point4, .point5 {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        transition: all .3s ease-in-out;
+    }
+}
+
+@media (max-width: 1199px) { 
+    .point1, .point2, .point3, .point4, .point5 {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        transition: all .3s ease-in-out;
+    }
+}
+
+@media (max-width: 788px) { 
+    .point1, .point2, .point3, .point4, .point5 {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        transition: all .3s ease-in-out;
+    }
+}
+
+@media (max-width: 575px) { 
+
+    .point1, .point2, .point3, .point4, .point5 {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        transition: all .3s ease-in-out;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translatey(0px);
+        }
+        50% {
+            transform: translatey(-10px);
+        }
+        100% {
+            transform: translatey(0px);
+        }
+    }
+}
+
+.point1 {
+    top: 18%;
+    left: 5%;
+}
+
+.point2 {
+    top: -5%;
+    left: 28%;
+}
+
+.point3 {
+    top: 0%;
+    left: 40%;
+}
+
+.point4 {
+    top: 0%;
+    left: 65%;
+}
+
+.point5 {
+    top: 18%;
+    right: 5%;    
+}
+
+.point1 img, .point2 img, .point3 img, .point4 img, .point5 img {
+    transform: translatey(0px);
+	animation: float 2s ease-in-out infinite;
+}
+
+
+.point1:hover, .point2:hover, .point3:hover, .point4:hover, .point5:hover {
+    transform: scale(1.4);
+}
+
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
 }

@@ -6,6 +6,7 @@ var player = require('play-sound')(opts = {})
 app.set('port', (process.env.PORT || 5000));
 
 app.use('/css', express.static('./css'));
+app.use('/images', express.static('./images'));
 app.use('/js', express.static('./js'));
 app.use('/sound', express.static('./sound'));
 
