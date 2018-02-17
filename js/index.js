@@ -2,6 +2,7 @@
 $(document).ready(() => {
     initIFrame();
     var points = [];
+    var ration = 100 / 768;
     number = 5;
     init();
 
@@ -11,15 +12,36 @@ $(document).ready(() => {
             points.push(point);
         }
         addEvent();
+        initialPointWidth();
     }
+
+    function scalePointsSize(size) {
+        for (let i = 0; i < number; i++) {
+            $('.point' + String(i + 1)).width(size);
+            $('.point' + String(i + 1)).height(size);
+        }
+        console.log('Dynamic setting the width of all points to: ' + String(size));
+    }
+
+    function initialPointWidth() {
+        var initialWidth = $(window).width();
+        scalePointsSize(initialWidth * ration);
+    }
+
+    $(window).resize(function() {
+        var deltaWindowSize = $(window).width();
+        var size = deltaWindowSize * ration;
+        scalePointsSize(size);
+    });
 
     function hideAllIFrame() {
         for (var i = 0; i < number; i++) {
             point = '.point' + String(i + 1);
             title = $(point).data('id');
             $('#' + title).hide();
-            $('#' + title)[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*')
+            // $('#' + title)[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
             // still need to initialization ....
+            // $('#' + title)[0].contentWindow.currentTime = 0;
 
         }
     }

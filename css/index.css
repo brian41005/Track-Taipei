@@ -71,6 +71,7 @@ button:hover {
 .intro-content {
     text-align: justify;
     margin-top: 40px;
+    margin-bottom: 40px;
     color: #0a418c;
 }
 
@@ -83,8 +84,11 @@ button:hover {
 }
 
 .map-content {
-    margin-top: 40px;
     text-align: center;
+}
+
+.display-content {
+    margin-bottom: 40px;
 }
 
 .track-container {
@@ -105,7 +109,7 @@ button:hover {
     display: none;
 }
 
-
+/*
 @media (min-width: 1200px) { 
     .point1, .point2, .point3, .point4, .point5 {
         position: absolute;
@@ -154,6 +158,7 @@ button:hover {
         }
     }
 }
+*/
 
 .point1 {
     top: 18%;
@@ -185,20 +190,55 @@ button:hover {
 	animation: float 2s ease-in-out infinite;
 }
 
+.point1, .point2, .point3, .point4, .point5 {
+    position: absolute;
+    transition: all .3s ease-in-out;
+}
+
 
 .point1:hover, .point2:hover, .point3:hover, .point4:hover, .point5:hover {
     transform: scale(1.4);
 }
 
 
-@keyframes float {
-	0% {
-		transform: translatey(0px);
-	}
-	50% {
-		transform: translatey(-20px);
-	}
-	100% {
-		transform: translatey(0px);
-	}
+@media (max-width: 1199px) { 
+    @keyframes float {
+        0% {
+            transform: translatey(0px);
+        }
+        50% {
+            transform: translatey(-20px);
+        }
+        100% {
+            transform: translatey(0px);
+        }
+    }
+}
+
+@media (max-width: 788px) { 
+    @keyframes float {
+        0% {
+            transform: translatey(0px);
+        }
+        50% {
+            transform: translatey(-15px);
+        }
+        100% {
+            transform: translatey(0px);
+        }
+    }
+}
+
+@media (max-width: 575px) { 
+    @keyframes float {
+        0% {
+            transform: translatey(0px);
+        }
+        50% {
+            transform: translatey(-10px);
+        }
+        100% {
+            transform: translatey(0px);
+        }
+    }
 }

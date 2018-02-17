@@ -47,4 +47,6 @@ body {
     cursor: pointer;
 }
 
-
+.entry-content #entry-title {
+    margin-left: -115px;
+}
