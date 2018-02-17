@@ -13,7 +13,7 @@ p {
     padding: 0;
 }
 
-.container, .track-container {
+.container, .track-music-content {
     margin: 0 auto;
     padding-left: 10%;
     padding-right: 10%;
@@ -41,7 +41,6 @@ p {
     display: none;
 }
 
-
 button {
     color: #0faa69;
     font-weight: bold;
@@ -53,7 +52,6 @@ button {
     height: 50px;
     width: 100px
 }
-
 
 button:hover {
     color: white;
