@@ -1,7 +1,7 @@
 
 $(document).ready(() => {
     $('.header-music p').click(function() {
-        window.location.href = '/';
+        window.location.href = '/run';
     });
 
     $('.header-about p').click(function() {
