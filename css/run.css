@@ -1,5 +1,4 @@
 body {
-    position: relative;
 }
 
 .map-content {
@@ -46,6 +45,20 @@ body {
 .point1 img, .point2 img, .point3 img, .point4 img, .point5 img {
     transform: translatey(0px);
 	animation: float 2s ease-in-out infinite;
+}
+
+@media (min-width: 1200px) { 
+    @keyframes float {
+        0% {
+            transform: translatey(0px);
+        }
+        50% {
+            transform: translatey(-20px);
+        }
+        100% {
+            transform: translatey(0px);
+        }
+    }
 }
 
 @media (max-width: 1199px) { 

@@ -1,6 +1,10 @@
 module.exports = function(app, player) { 
   var model = require('../model/mdoel');
 
+  app.get('/test', function(req, res) {
+    res.render('pages/header');
+  });
+
   app.post('/data', function(req, res) {
     const { key } = req.body;
     data = model.dataArray[key];
