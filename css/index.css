@@ -8,11 +8,6 @@ body {
     font-weight: bold;
 }
 
-p {
-    margin: 0;
-    padding: 0;
-}
-
 .container, .track-music-content {
     margin: 0 auto;
     padding-left: 10%;
@@ -193,11 +188,9 @@ button:hover {
     transition: all .3s ease-in-out;
 }
 
-
 .point1:hover, .point2:hover, .point3:hover, .point4:hover, .point5:hover {
     transform: scale(1.4);
 }
-
 
 @media (max-width: 1199px) { 
     @keyframes float {
