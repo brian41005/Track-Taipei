@@ -64,8 +64,8 @@ $(document).ready(() => {
     }
 
     function initIFrame() {
-        containerWidth = $('.container').width();
-        $('#google-iframe').width(containerWidth);
+        //containerWidth = $('.container').width();
+        //$('#google-iframe').width(containerWidth);
 
         $('#intro').addClass('buttonHover');
         $('.header-music p').addClass('header-info-item-hover');
@@ -77,7 +77,7 @@ $(document).ready(() => {
         widget.seekTo(1);
     }
 
-    $('#track').click(function() {
+    $('#track').on('click', function() {
         stopTitleIFrame();
         // hide intro-content and show track 
         $('.functionailty-area p').show();
@@ -89,7 +89,7 @@ $(document).ready(() => {
         $('#intro').removeClass('buttonHover');
     });
 
-    $('#intro').click(function() {
+    $('#intro').on('click', function() {
         hideAllIFrame();
         $('.functionailty-area p').hide('slow');
         // hide track and show intro-content

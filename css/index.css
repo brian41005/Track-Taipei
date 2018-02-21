@@ -76,7 +76,7 @@ button:hover {
     margin-top: 40px;
 }
 
-.map-content {
+.gmap-content {
     text-align: center;
 }
 
@@ -231,5 +231,11 @@ button:hover {
         100% {
             transform: translatey(0px);
         }
+    }
+    
+    button {
+        height: 40px;
+        width: 75px;
+        font-size: 16px;
     }
 }
