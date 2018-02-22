@@ -59,12 +59,11 @@ $(document).ready(function() {
         googleMapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.468451959292!2d121.5164839646644!3d25.05210690266453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96cf2fee5ad%3A0x19d4a2f503dc959c!2zMTAz5Y-w5YyX5biC5aSn5ZCM5Y2A5aSq5Y6f6LevOTflt7c!5e0!3m2!1szh-TW!2stw!4v1518844031617',
         trackIntro: '當你說要走，我不想回首的時候....',
         trackIFrame1: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/197472029&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true',
-        trackIFrame2: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/405573275&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true',
+        trackIFrame2: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/232886537&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true',
         trackIFrame3: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/405573275&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true',
         trackIFrame4: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/405573275&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true',
         trackIFrame5: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/247502140&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true'
     }];  
-
     init(); 
 
     function init() {
@@ -77,6 +76,8 @@ $(document).ready(function() {
         addEvent();
         // dynamic setting the width of all points
         initialPlaceWidth();
+        // dynamic setting the height of the spinner
+        scaleSpinnerHeight();
     }
 
     function initialPlaceWidth() {
@@ -132,7 +133,15 @@ $(document).ready(function() {
         console.log('Dynamic setting the width of all points to: ' + String(size));
     }
 
+    function scaleSpinnerHeight() {
+        var height = $( window ).height();
+        var newHeight = height - 60;
+        $('.spinner-container').height(newHeight);
+        console.log('height: ' + height);
+    }
+
     $(window).resize(function() {
+        scaleSpinnerHeight();
         var deltaWindowSize = $(window).width();
         var size = deltaWindowSize * ration;
         scalePlaceSize(size);
