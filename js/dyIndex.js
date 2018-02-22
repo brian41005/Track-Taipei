@@ -4,9 +4,6 @@ $(document).ready(() => {
     initIFrame();
     var points = [];
     var ration = 100 / 768;
-    var currentSound = 0;
-    var temp = 0;
-    var isClick = false;
     number = 5;
     init();
 
@@ -19,18 +16,20 @@ $(document).ready(() => {
         initialPointWidth();
     }
 
+    function initialPointWidth() { // initialize the width of all points by the width of the window
+        var initialWidth = $(window).width();
+        scalePointsSize(initialWidth * ration);
+    }
+
     function scalePointsSize(size) {
         for (let i = 0; i < number; i++) {
-            $('.point' + String(i + 1)).width(size);
-            $('.point' + String(i + 1)).height(size);
+            var point = '.point' + String(i + 1);
+            $(point).width(size);
+            $(point).height(size);
         }
         console.log('Dynamic setting the width of all points to: ' + String(size));
     }
 
-    function initialPointWidth() {
-        var initialWidth = $(window).width();
-        scalePointsSize(initialWidth * ration);
-    }
 
     $(window).resize(function() {
         var deltaWindowSize = $(window).width();
@@ -42,7 +41,8 @@ $(document).ready(() => {
         for (var i = 0; i < number; i++) {
             point = '.point' + String(i + 1);
             title = $(point).data('id');
-            $('#' + title).hide();
+            titleID = '#' + title;
+            $(titleID).hide();
             var widget = SC.Widget(document.getElementById(title));
             widget.pause();
             widget.seekTo(1);
@@ -56,17 +56,13 @@ $(document).ready(() => {
     function addEvent() {
         for (let i = 0; i < number; i++) {
             points[i].addEventListener('click', function() {
-                currentSound = i;
                 hideAllIFrame();
                 showIFrameByName('#track-iframe' + String(i + 1));
-            }, false);
+            });
         }
     }
 
     function initIFrame() {
-        //containerWidth = $('.container').width();
-        //$('#google-iframe').width(containerWidth);
-
         $('#intro').addClass('buttonHover');
         $('.header-music p').addClass('header-info-item-hover');
     }
@@ -89,7 +85,7 @@ $(document).ready(() => {
         $('#intro').removeClass('buttonHover');
     });
 
-    $('#intro').on('click', function() {
+    function setIntroContent() {
         hideAllIFrame();
         $('.functionailty-area p').hide('slow');
         // hide track and show intro-content
@@ -97,8 +93,17 @@ $(document).ready(() => {
         window.setTimeout(function() {
             $('.display-content').fadeIn('slow');
         }, 1000);
-        $(this).addClass('buttonHover');
+        $('#intro').addClass('buttonHover');
         $('#track').removeClass('buttonHover');
+    }
+
+    $('#intro').on('click', function() {
+        setIntroContent();
+    });
+
+    $('#close').click(function() {
+        setIntroContent();
+        $('.hide-container').fadeOut();
     });
 });
 
