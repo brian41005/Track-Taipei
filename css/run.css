@@ -59,7 +59,7 @@ body {
 
 .place1 img, .place2 img, .place3 img, .place4 img, .place5 img {
     transform: translatey(0px);
-	animation: float 2s ease-in-out infinite;
+	animation: float 3s ease-in-out infinite;
 }
 
 @media (min-width: 1200px) { 

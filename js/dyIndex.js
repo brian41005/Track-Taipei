@@ -1,6 +1,5 @@
 
 $(document).ready(() => {
-    
     initIFrame();
     var points = [];
     var ration = 100 / 768;
@@ -44,8 +43,8 @@ $(document).ready(() => {
             titleID = '#' + title;
             $(titleID).hide();
             var widget = SC.Widget(document.getElementById(title));
+            // widget.seekTo(1);
             widget.pause();
-            widget.seekTo(1);
         }
     }
 
@@ -69,8 +68,9 @@ $(document).ready(() => {
 
     function stopTitleIFrame() {
         var widget = SC.Widget(document.getElementById('titleIFrame'));
+        console.log(widget);
+        // widget.seekTo(1);
         widget.pause();
-        widget.seekTo(1);
     }
 
     $('#track').on('click', function() {
@@ -101,40 +101,14 @@ $(document).ready(() => {
         setIntroContent();
     });
 
+    function closeAllIFrame() {
+        hideAllIFrame();
+        stopTitleIFrame();
+    }
+
     $('#close').click(function() {
         setIntroContent();
+        closeAllIFrame();
         $('.hide-container').fadeOut();
     });
 });
-
-
-
-
-
-/*
-$('#post-btn').click(() => {
-    var indexing = {
-        key: 0,
-    };
-    $.ajax({
-        type : 'POST',
-        url : '/data',
-        data : indexing,
-        success : json => {
-            console.log(json);
-        }
-    });
-});
-
-
-$('#change-iframe-btn').click(function() {
-        var data = {
-            name: 'Z-Xuan'
-        };
-
-        console.log(data.name);
-        //document.getElementById('header-iframe').src = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/247502140&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true";
-        //console.log('done');
-        //$('.track-content img').attr('src', '/images/0131 sketch i8-16.png');
-    })
-*/

@@ -6,6 +6,7 @@ body {
     font-size: 32px;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-weight: bold;
+    letter-spacing: 3px;
 }
 
 .container, .track-music-content {
@@ -13,16 +14,17 @@ body {
     padding-left: 10%;
     padding-right: 10%;
     margin-top: 30px;
+    margin-bottom: 70px;
 }
 
 .image-content {
     display: grid;
-    grid-template-columns: 10% 90%;
+    grid-template-columns: 14% 86%;
 }
 
 .image-content .road-text-image {
     width: 100%;
-    margin-top: 90%;
+    margin-top: 80%;
 }
 
 .image-content .main-image {
@@ -30,10 +32,14 @@ body {
 }
 
 .functionailty-area p {
-    margin-top: 5%;
+    margin-top: 7%;
     font-size: 15px;
     color: #0a418c;
     display: none;
+}
+
+.functionailty-area button {
+
 }
 
 button {
@@ -42,7 +48,7 @@ button {
     background-color: white;
     border: 2px solid #0faa69;
     border-radius: 30px;
-    font-size: 24px;
+    font-size: 18px;
     box-sizing: border-box;
     height: 50px;
     width: 100px
@@ -63,8 +69,8 @@ button:hover {
 
 .intro-content {
     text-align: justify;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
     color: #0a418c;
 }
 
@@ -73,7 +79,7 @@ button:hover {
 }
 
 .music-content {
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .gmap-content {
