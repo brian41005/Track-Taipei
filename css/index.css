@@ -5,7 +5,6 @@ body {
     padding: 0;
     font-size: 32px;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-    font-weight: bold;
     letter-spacing: 3px;
 }
 
@@ -38,9 +37,6 @@ body {
     display: none;
 }
 
-.functionailty-area button {
-
-}
 
 button {
     color: #0faa69;
@@ -108,56 +104,19 @@ button:hover {
     display: none;
 }
 
-/*
+
 @media (min-width: 1200px) { 
-    .point1, .point2, .point3, .point4, .point5 {
-        position: absolute;
-        width: 120px;
-        height: 120px;
-        transition: all .3s ease-in-out;
-    }
+    
 }
 
-@media (max-width: 1199px) { 
-    .point1, .point2, .point3, .point4, .point5 {
-        position: absolute;
-        width: 120px;
-        height: 120px;
-        transition: all .3s ease-in-out;
-    }
-}
-
-@media (max-width: 788px) { 
-    .point1, .point2, .point3, .point4, .point5 {
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        transition: all .3s ease-in-out;
-    }
-}
 
 @media (max-width: 575px) { 
-
-    .point1, .point2, .point3, .point4, .point5 {
-        position: absolute;
-        width: 60px;
-        height: 60px;
-        transition: all .3s ease-in-out;
+    body {
+        letter-spacing: 1px;
     }
-
-    @keyframes float {
-        0% {
-            transform: translatey(0px);
-        }
-        50% {
-            transform: translatey(-10px);
-        }
-        100% {
-            transform: translatey(0px);
-        }
-    }
+    
 }
-*/
+
 
 .point1 {
     top: 18%;
