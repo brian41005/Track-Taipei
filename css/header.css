@@ -59,14 +59,13 @@
     background-color: #0a418c;
     width: 100%;
     height: 70px;
+    font-weight: bold;
 }
 
 .header-title  {
     float: left;
     height: 70px;
-    width: 45%;
 }
-
 
 .header-info {
     float: right;
