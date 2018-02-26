@@ -5,7 +5,7 @@ body {
     padding: 0;
     font-size: 32px;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-    font-weight: bold;
+    letter-spacing: 3px;
 }
 
 .container, .track-music-content {
@@ -13,16 +13,18 @@ body {
     padding-left: 10%;
     padding-right: 10%;
     margin-top: 30px;
+    margin-bottom: 70px;
 }
 
 .image-content {
     display: grid;
-    grid-template-columns: 10% 90%;
+    grid-template-columns: 14% 86%;
 }
 
 .image-content .road-text-image {
-    width: 100%;
-    margin-top: 90%;
+    width: 40%;
+    margin-top: 80%;
+    margin-left: 20%;
 }
 
 .image-content .main-image {
@@ -30,11 +32,12 @@ body {
 }
 
 .functionailty-area p {
-    margin-top: 5%;
+    margin-top: 7%;
     font-size: 15px;
     color: #0a418c;
     display: none;
 }
+
 
 button {
     color: #0faa69;
@@ -42,7 +45,7 @@ button {
     background-color: white;
     border: 2px solid #0faa69;
     border-radius: 30px;
-    font-size: 24px;
+    font-size: 18px;
     box-sizing: border-box;
     height: 50px;
     width: 100px
@@ -63,8 +66,8 @@ button:hover {
 
 .intro-content {
     text-align: justify;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
     color: #0a418c;
 }
 
@@ -73,10 +76,10 @@ button:hover {
 }
 
 .music-content {
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
-.map-content {
+.gmap-content {
     text-align: center;
 }
 
@@ -102,56 +105,19 @@ button:hover {
     display: none;
 }
 
-/*
+
 @media (min-width: 1200px) { 
-    .point1, .point2, .point3, .point4, .point5 {
-        position: absolute;
-        width: 120px;
-        height: 120px;
-        transition: all .3s ease-in-out;
-    }
+    
 }
 
-@media (max-width: 1199px) { 
-    .point1, .point2, .point3, .point4, .point5 {
-        position: absolute;
-        width: 120px;
-        height: 120px;
-        transition: all .3s ease-in-out;
-    }
-}
-
-@media (max-width: 788px) { 
-    .point1, .point2, .point3, .point4, .point5 {
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        transition: all .3s ease-in-out;
-    }
-}
 
 @media (max-width: 575px) { 
-
-    .point1, .point2, .point3, .point4, .point5 {
-        position: absolute;
-        width: 60px;
-        height: 60px;
-        transition: all .3s ease-in-out;
+    body {
+        letter-spacing: 1px;
     }
-
-    @keyframes float {
-        0% {
-            transform: translatey(0px);
-        }
-        50% {
-            transform: translatey(-10px);
-        }
-        100% {
-            transform: translatey(0px);
-        }
-    }
+    
 }
-*/
+
 
 .point1 {
     top: 18%;
@@ -231,5 +197,11 @@ button:hover {
         100% {
             transform: translatey(0px);
         }
+    }
+    
+    button {
+        height: 40px;
+        width: 75px;
+        font-size: 16px;
     }
 }

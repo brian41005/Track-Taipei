@@ -27,19 +27,23 @@ body {
 
 .entry-content p {
     letter-spacing: 3px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 #entry-btn {
-    margin-top: 20px;
+    margin-top: 50px;
     color: #0a418c;
     font-size: 20px;
     background-color: #ffffff;
-    border-radius: 50px;
+    border-radius: 35px;
     padding: 30px 25px;
     font-weight: bold;
     opacity: 0.5;
+    width: 140px;
     transition: all .6s ease-in-out;
+    letter-spacing: 5px;
+    font-size: 16px;
+    margin-left: -10px;
 }
 
 #entry-btn:hover {
@@ -48,5 +52,19 @@ body {
 }
 
 .entry-content #entry-title {
-    margin-left: -115px;
+    margin-left: -95px;
+}
+
+
+
+@media (min-width: 1200px) { 
+    
+}
+
+@media (max-width: 1199px) { 
+    
+}
+
+@media (max-width: 788px) { 
+   
 }

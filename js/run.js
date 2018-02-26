@@ -1,59 +1,167 @@
 $(document).ready(function() {
     var ration = 125 / 768;
-    var points = [];
+    var places = [];
     number = 5;
+
+    data = [{
+        roadPhoto: '/images/main_text.svg',
+        mainPhoto: '/images/main.svg',
+        titleIFrame: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/197472029&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true',
+        titleIntro: '位於昔日台北火車站後站出口的太原路周邊，過去是北部地區各類五金雜貨、文具、時裝、飾品的批發市場，全盛時期曾高達數十家，其中，太原路上以嬰幼兒玩具、電動玩具最多，因此有玩具街之稱。',
+        googleMapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.468451959292!2d121.5164839646644!3d25.05210690266453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96cf2fee5ad%3A0x19d4a2f503dc959c!2zMTAz5Y-w5YyX5biC5aSn5ZCM5Y2A5aSq5Y6f6LevOTflt7c!5e0!3m2!1szh-TW!2stw!4v1518844031617',
+        trackIntro: '看看是誰組成了太原路吧',
+        trackIFrame1: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/197472029&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true',
+        trackIFrame2: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/405573275&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true',
+        trackIFrame3: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/405573275&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true',
+        trackIFrame4: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/405573275&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true',
+        trackIFrame5: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/247502140&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true'
+    }, {
+        roadPhoto: '/images/svg-18.svg',
+        mainPhoto: '/images/main.svg',
+        titleIFrame: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/405052437&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        titleIntro: '位於昔日台北火車站後站出口的太原路周邊，過去是北部地區各類五金雜貨、文具、時裝、飾品的批發市場，全盛時期曾高達數十家，其中，太原路上以嬰幼兒玩具、電動玩具最多，因此有玩具街之稱。',
+        googleMapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.468451959292!2d121.5164839646644!3d25.05210690266453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96cf2fee5ad%3A0x19d4a2f503dc959c!2zMTAz5Y-w5YyX5biC5aSn5ZCM5Y2A5aSq5Y6f6LevOTflt7c!5e0!3m2!1szh-TW!2stw!4v1518844031617',
+        trackIntro: '看看是誰組成了太原路吧',
+        trackIFrame1: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/405052560&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        trackIFrame2: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/405052536&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        trackIFrame3: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/405052521&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        trackIFrame4: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/405052494&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        trackIFrame5: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/405052473&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true'
+    }, {
+        roadPhoto: '/images/022520.svg',
+        mainPhoto: '/images/svg-17.svg',
+        titleIFrame: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/404857155&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        titleIntro: '歷經清治時期、日治時期、戰後時期，興建於民國十七年的東門市場是個歷史悠久的傳統市場，充滿了許多老饕客的共同記憶和現代人的新穎口味。無論是彈牙的魚丸、酥脆的餡餅、鮮甜的米粉湯，蜿蜒的小巷弄內隱藏著道地的庶民小吃。在各地眷村紛紛拆遷的現代，東門市場的美食成了另類的臺北史紀錄。',
+        googleMapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.986160014005!2d121.52451861541354!3d25.03454374442266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a982bcb19f97%3A0x431fc1c5030a686!2zMTAw5Y-w5YyX5biC5Lit5q2j5Y2A5L-h576p6Lev5LqM5q61ODHomZ8!5e0!3m2!1szh-TW!2stw!4v1519643520638',
+        trackIntro: '看看是誰組成了東門市場吧',
+        trackIFrame1: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/457291410&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        trackIFrame2: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/404857203&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        trackIFrame3: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/404857191&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        trackIFrame4: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/404857188&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        trackIFrame5: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/404857173&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true'
+    }, {
+        roadPhoto: '/images/main_text.svg',
+        mainPhoto: '/images/main.svg',
+        titleIFrame: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/197472029&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true',
+        titleIntro: '位於昔日台北火車站後站出口的太原路周邊，過去是北部地區各類五金雜貨、文具、時裝、adidas的批發市場，全盛時期曾高達數十家，balenciaga，太原路上以嬰幼、電動最多，因此有孤獨的浪子之稱。',
+        googleMapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.468451959292!2d121.5164839646644!3d25.05210690266453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96cf2fee5ad%3A0x19d4a2f503dc959c!2zMTAz5Y-w5YyX5biC5aSn5ZCM5Y2A5aSq5Y6f6LevOTflt7c!5e0!3m2!1szh-TW!2stw!4v1518844031617',
+        trackIntro: '不要談什麼分離，我不會因為這樣而哭泣，那只是一場遊戲一場夢',
+        trackIFrame1: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/197472029&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true',
+        trackIFrame2: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/405573275&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true',
+        trackIFrame3: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/405573275&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true',
+        trackIFrame4: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/405573275&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true',
+        trackIFrame5: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/247502140&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true'
+    }, {
+        roadPhoto: '/images/main_text.svg',
+        mainPhoto: '/images/main.svg',
+        titleIFrame: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/197472029&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true',
+        titleIntro: '位於昔日台北火車站後站出口的太原路周邊，過去是北部地區各類五金雜貨、文具、時裝、adidas的批發市場，全盛時期曾高達數十家，balenciaga，太原路上以嬰幼、電動最多，因此有旺角卡門之稱。',
+        googleMapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.468451959292!2d121.5164839646644!3d25.05210690266453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96cf2fee5ad%3A0x19d4a2f503dc959c!2zMTAz5Y-w5YyX5biC5aSn5ZCM5Y2A5aSq5Y6f6LevOTflt7c!5e0!3m2!1szh-TW!2stw!4v1518844031617',
+        trackIntro: '當你說要走，我不想回首的時候....',
+        trackIFrame1: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/197472029&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true',
+        trackIFrame2: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/232886537&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true',
+        trackIFrame3: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/405573275&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true',
+        trackIFrame4: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/405573275&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true',
+        trackIFrame5: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/247502140&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true'
+    }];  
     init(); 
-    // console.log(initialWidth) ;
+
     function init() {
         $('.header-music p').addClass('header-info-item-hover');
         for (var i = 0; i < number; i++) {
-            var point = document.getElementsByClassName('point' + String(i + 1))[0];
-            points.push(point);
+            var place = document.getElementsByClassName('place' + String(i + 1))[0];
+            places.push(place);
         }
         // add click event to all points
         addEvent();
         // dynamic setting the width of all points
-        initialPointWidth();
+        initialPlaceWidth();
+        // dynamic setting the photo of the device
+        setMapContentWithWidthOfDevice();
     }
 
-    function initialPointWidth() {
+    function loadImgWithUrl(url) {
+        // when attr load completely then call scaleSpinnerHeight
+        $('#map').attr('src', url).load(function() {
+            // dynamic setting the height of the spinner
+            scaleSpinnerHeight();
+        });
+    }
+
+    function setMapContentWithWidthOfDevice() {
+        var width = $(window).width();
+        var imgs = ['/images/0225svg-16.svg', '/images/map_工作區域 1.svg', '/images/map_工作區域 1.svg', '/images/map_工作區域 1.svg'];
+        var index = Math.floor(width / 768);
+        // if width > 768 index becomes to one else becomes to zero
+        loadImgWithUrl(imgs[index]);
+    }
+
+    function initialPlaceWidth() {
         var initialWidth = $(window).width();
-        scalePointsSize(initialWidth * ration);
+        scalePlaceSize(initialWidth * ration);
+    }
+
+    function replaceContentWithModel(index) {
+        model = data[index];
+        $('.image-content .road-text-image').attr('src', model.roadPhoto);
+        $('.image-content .main-image').attr('src', model.mainPhoto);
+        $('#titleIFrame').attr('src', model.titleIFrame);
+        $('.functionailty-area p').html(model.trackIntro);
+        $('#google-iframe').attr('src', model.googleMapSrc);
+        $('.intro-content p').html(model.titleIntro);
+        $('#track-iframe1').attr('src', model.trackIFrame1);
+        $('#track-iframe2').attr('src', model.trackIFrame2);
+        $('#track-iframe3').attr('src', model.trackIFrame3);
+        $('#track-iframe4').attr('src', model.trackIFrame4);
+        $('#track-iframe5').attr('src', model.trackIFrame5);
+    }
+      
+    function startSpinning() {
+        $('.spinner-container').show();
+    }
+
+    function stopSpinning() {
+        $('.spinner-container').hide();
     }
 
     function fetachIFrame(index) {
-        console.log(index);
-        window.location.href = "/0";
-        // $('.frame-content').show();
-        // $('.hide-container').fadeIn();
+        // 未完成
+        if (index == 0 || index == 3 || index == 4)
+            return;
+        replaceContentWithModel(index);
+        startSpinning();
+        setTimeout(function() {
+            stopSpinning();
+            $('.hide-container').fadeIn();
+        }, 2500);
     }
     
     function addEvent() {
         for (let i = 0; i < number; i++) {
-            points[i].addEventListener('click', function() {
+            places[i].addEventListener('click', function() {
                 fetachIFrame(i);
             }, false);
         }
     }
 
-    function scalePointsSize(size) {
+    function scalePlaceSize(size) {
         for (let i = 0; i < number; i++) {
-            $('.point' + String(i + 1)).width(size);
-            $('.point' + String(i + 1)).height(size);
+            $('.place' + String(i + 1)).width(size);
+            $('.place' + String(i + 1)).height(size);
         }
         console.log('Dynamic setting the width of all points to: ' + String(size));
+    }
+
+    function scaleSpinnerHeight() {
+        var height = $('.map-content #map').height();
+        $('.spinner-container').height(height);
+        console.log('scale height: ' + height);
     }
 
     $(window).resize(function() {
         var deltaWindowSize = $(window).width();
         var size = deltaWindowSize * ration;
-        scalePointsSize(size);
+        scalePlaceSize(size);
+        setMapContentWithWidthOfDevice();
     });
 });
-/*
-
-$('.close-icon').click(function() {
-    // $('.frame-content').hide('slow');
-    // console.log('click');
-});
-*/

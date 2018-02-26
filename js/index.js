@@ -66,6 +66,7 @@ $(document).ready(() => {
     function initIFrame() {
         containerWidth = $('.container').width();
         $('#google-iframe').width(containerWidth);
+
         $('#intro').addClass('buttonHover');
         $('.header-music p').addClass('header-info-item-hover');
     }
