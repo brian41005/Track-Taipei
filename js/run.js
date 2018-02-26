@@ -76,22 +76,24 @@ $(document).ready(function() {
         addEvent();
         // dynamic setting the width of all points
         initialPlaceWidth();
-        // dynamic setting the height of the spinner
-        scaleSpinnerHeight();
-        // dynamic setting thephoto of the device
+        // dynamic setting the photo of the device
         setMapContentWithWidthOfDevice();
+    }
+
+    function loadImgWithUrl(url) {
+        // when attr load completely then call scaleSpinnerHeight
+        $('#map').attr('src', url).load(function() {
+            // dynamic setting the height of the spinner
+            scaleSpinnerHeight();
+        });
     }
 
     function setMapContentWithWidthOfDevice() {
         var width = $(window).width();
-        var imgUrl;
-        if (width < 768) {
-            imgUrl = '/images/0225svg-16.svg'
-            $('#map').attr('src', imgUrl);
-        } else {
-            imgUrl = '/images/map_工作區域 1.svg'
-            $('#map').attr('src', imgUrl);            
-        }
+        var imgs = ['/images/0225svg-16.svg', '/images/map_工作區域 1.svg', '/images/map_工作區域 1.svg', '/images/map_工作區域 1.svg'];
+        var index = Math.floor(width / 768);
+        // if width > 768 index becomes to one else becomes to zero
+        loadImgWithUrl(imgs[index]);
     }
 
     function initialPlaceWidth() {
@@ -151,15 +153,12 @@ $(document).ready(function() {
     }
 
     function scaleSpinnerHeight() {
-        // var height = $( window ).height();
         var height = $('.map-content #map').height();
-        // var newHeight = height - 60;
         $('.spinner-container').height(height);
-        console.log('height: ' + height);
+        console.log('scale height: ' + height);
     }
 
     $(window).resize(function() {
-        scaleSpinnerHeight();
         var deltaWindowSize = $(window).width();
         var size = deltaWindowSize * ration;
         scalePlaceSize(size);
