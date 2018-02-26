@@ -151,9 +151,10 @@ $(document).ready(function() {
     }
 
     function scaleSpinnerHeight() {
-        var height = $( window ).height();
-        var newHeight = height - 60;
-        $('.spinner-container').height(newHeight);
+        // var height = $( window ).height();
+        var height = $('.map-content #map').height();
+        // var newHeight = height - 60;
+        $('.spinner-container').height(height);
         console.log('height: ' + height);
     }
 
