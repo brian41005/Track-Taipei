@@ -1,14 +1,21 @@
 
 $(document).ready(() => {
     $('.header-music p').click(function() {
-        window.location.href = '/run';
+        var href = '/run';
+        setWindowLocationHref(href);
     });
 
     $('.header-about p').click(function() {
-        window.location.href = '/about';
+        var href = '/about';
+        setWindowLocationHref(href);
     });
 
     $('.header-title img').click(function() {
-        window.location.href = '/entry';
+        var href = '/entry'
+        setWindowLocationHref(href);
     });
+
+    function setWindowLocationHref(href) {
+        window.location.href = href;
+    }
 });

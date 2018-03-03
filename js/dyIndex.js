@@ -1,104 +1,89 @@
 
 $(document).ready(() => {
-    initIFrame();
     var points = [];
-    var ration = 100 / 768;
-    number = 5;
-    init();
+    var scaleRationOfPoint = 100 / 768;
+    numberOfPoint = 5;
 
-    function init() {
-        for (var i = 0; i < number; i++) {
+    initializePageStatus();
+
+    function initializePageStatus() {
+        // active introButton status
+        activeIntroButton();
+        // fetch all points and insert into array 
+        initailizePoints();
+        bindEventOfClickPoint();
+        // initailize the size of the points
+        initialPointSize();
+    }
+
+    function initailizePoints() {
+        for (var i = 0; i < numberOfPoint; i++) {
             var point = document.getElementsByClassName('point' + String(i + 1))[0];
             points.push(point);
         }
-        addEvent();
-        initialPointWidth();
     }
 
-    function initialPointWidth() { // initialize the width of all points by the width of the window
-        var initialWidth = $(window).width();
-        scalePointsSize(initialWidth * ration);
-    }
-
-    function scalePointsSize(size) {
-        for (let i = 0; i < number; i++) {
-            var point = '.point' + String(i + 1);
-            $(point).width(size);
-            $(point).height(size);
-        }
-        console.log('Dynamic setting the width of all points to: ' + String(size));
-    }
-
-
-    $(window).resize(function() {
-        var deltaWindowSize = $(window).width();
-        var size = deltaWindowSize * ration;
-        scalePointsSize(size);
-    });
-
-    function hideAllIFrame() {
-        for (var i = 0; i < number; i++) {
-            point = '.point' + String(i + 1);
-            title = $(point).data('id');
-            titleID = '#' + title;
-            $(titleID).hide();
-            var widget = SC.Widget(document.getElementById(title));
-            // widget.seekTo(1);
-            widget.pause();
-        }
-    }
-
-    function showIFrameByName(title) {
-        $(title).fadeIn();
-    }
-
-    function addEvent() {
-        for (let i = 0; i < number; i++) {
-            points[i].addEventListener('click', function() {
+    function bindEventOfClickPoint() {
+        for (let i = 0; i < numberOfPoint; i++) {
+            var eventStatus = 'click';
+            points[i].addEventListener(eventStatus, function() {
                 hideAllIFrame();
                 showIFrameByName('#track-iframe' + String(i + 1));
             });
         }
     }
 
-    function initIFrame() {
-        $('#intro').addClass('buttonHover');
-        $('.header-music p').addClass('header-info-item-hover');
+    function hideAllIFrame() {
+        for (var i = 0; i < numberOfPoint; i++) {
+            hideIFrameByIndex(i);
+            pauseSoundCloudWidgetByIndex(i);
+        }
     }
 
-    function stopTitleIFrame() {
-        var widget = SC.Widget(document.getElementById('titleIFrame'));
-        console.log(widget);
+    function hideIFrameByIndex(index) {
+        title = '#track-iframe' + String(index + 1);
+        $(title).hide();
+    }
+
+    function pauseSoundCloudWidgetByIndex(index) {
+        titleID = 'track-iframe' + String(index + 1);
+        var widget = SC.Widget(document.getElementById(titleID));
         // widget.seekTo(1);
         widget.pause();
     }
 
-    $('#track').on('click', function() {
-        stopTitleIFrame();
-        // hide intro-content and show track 
-        $('.functionailty-area p').show();
-        $('.display-content').hide('slow');
-        window.setTimeout(function() {
-            $('.track-container').fadeIn();
-        }, 1000);
-        $(this).addClass('buttonHover');
-        $('#intro').removeClass('buttonHover');
-    });
-
-    function setIntroContent() {
-        hideAllIFrame();
-        $('.functionailty-area p').hide('slow');
-        // hide track and show intro-content
-        $('.track-container').hide('slow');
-        window.setTimeout(function() {
-            $('.display-content').fadeIn('slow');
-        }, 1000);
-        $('#intro').addClass('buttonHover');
-        $('#track').removeClass('buttonHover');
+    function showIFrameByName(title) {
+        $(title).fadeIn();
     }
 
-    $('#intro').on('click', function() {
+    function initialPointSize() { // initialize the width of all points by the width of the window
+        var windowWidth = $(window).width();
+        scalePointSize(windowWidth * scaleRationOfPoint);
+    }
+
+    $(window).resize(function() {
+        var windowWidth = $(window).width();
+        var size = windowWidth * scaleRationOfPoint;
+        scalePointsSize(size);
+    });
+
+    function scalePointSize(size) {
+        for (let i = 0; i < numberOfPoint; i++) {
+            var point = '.point' + String(i + 1);
+            setPointHeightAndWidth(point, size);
+        }
+        console.log('Dynamic setting the size of all track points to: ' + String(size));
+    }
+
+    function setPointHeightAndWidth(point, size) {
+        $(point).width(size);
+        $(point).height(size);
+    }
+
+    $('#close').click(function() {
         setIntroContent();
+        closeAllIFrame();
+        hidePlaceIntroDetail();
     });
 
     function closeAllIFrame() {
@@ -106,9 +91,58 @@ $(document).ready(() => {
         stopTitleIFrame();
     }
 
-    $('#close').click(function() {
-        setIntroContent();
-        closeAllIFrame();
+    function hidePlaceIntroDetail() {
         $('.hide-container').fadeOut();
+    }
+
+    function stopTitleIFrame() {
+        var widget = SC.Widget(document.getElementById('titleIFrame'));
+        // widget.seekTo(1);
+        widget.pause();
+    }
+
+    $('#track').on('click', function() {
+        activeTrackButton();
+        unActiveIntroButton();
+        stopTitleIFrame();
+        $('.functionailty-area p').show();
+        $('.display-content').hide('slow');
+        showTargetAfterTimeOut('.track-container');
     });
+
+    $('#intro').on('click', function() {
+        setIntroContent();
+    });
+
+    function setIntroContent() {
+        activeIntroButton();
+        unActiveTrackButton();
+        hideAllIFrame();
+        $('.functionailty-area p').hide('slow');
+        // hide track and show intro-content
+        $('.track-container').hide('slow');
+        showTargetAfterTimeOut('.display-content');
+    }
+
+    function activeTrackButton() {
+        $('#track').addClass('buttonHover');
+    }
+
+    function activeIntroButton() {
+        $('#intro').addClass('buttonHover');
+    }
+
+    function unActiveTrackButton() {
+        $('#track').removeClass('buttonHover');
+    }
+
+    function unActiveIntroButton() {
+        $('#intro').removeClass('buttonHover');
+    }
+
+    function showTargetAfterTimeOut(target) {
+        window.setTimeout(function() {
+            $(target).fadeIn('slow');
+        }, 1000);
+    }
 });
