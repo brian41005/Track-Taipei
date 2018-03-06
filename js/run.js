@@ -1,7 +1,7 @@
 $(document).ready(function() {
-    var ration = 125 / 768;
+    var scaleRationOfPlace = 125 / 768;
     var places = [];
-    number = 5;
+    numberOfPlace = 5;
 
     data = [{
         roadPhoto: '/images/main_text.svg',
@@ -64,50 +64,90 @@ $(document).ready(function() {
         trackIFrame4: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/405573275&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true',
         trackIFrame5: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/247502140&amp;color=%232d0d15&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true'
     }];  
-    init(); 
 
-    function init() {
+    initializePageStatus(); 
+
+    function initializePageStatus() {
+        // active headerMusic's bottom border
+        activeHeaderMusic();
+        // fetch all places and insert into places array
+        initailizePlaces();
+        // bind click event to all points
+        bindEventOfClickPlace();
+        // dynamic setting the size of all points
+        initializePlaceSize();
+        // dynamic setting the photo of the device
+        setMapImgByWidthOfDevice();
+    }
+
+    function activeHeaderMusic() {
         $('.header-music p').addClass('header-info-item-hover');
-        for (var i = 0; i < number; i++) {
-            var place = document.getElementsByClassName('place' + String(i + 1))[0];
+    }
+
+    function initailizePlaces() {
+        for (var i = 0; i < numberOfPlace; i++) {
+            var placeName = 'place' + String(i + 1);
+            var place = document.getElementsByClassName(placeName)[0];
             places.push(place);
         }
-        // add click event to all points
-        addEvent();
-        // dynamic setting the width of all points
-        initialPlaceWidth();
-        // dynamic setting the photo of the device
-        setMapContentWithWidthOfDevice();
     }
 
-    function loadImgWithUrl(url) {
-        // when attr load completely then call scaleSpinnerHeight
-        $('#map').attr('src', url).load(function() {
-            // dynamic setting the height of the spinner
-            scaleSpinnerHeight();
-        });
+    function bindEventOfClickPlace() {
+        for (let i = 0; i < numberOfPlace; i++) {
+            var eventStatus = 'click';
+            places[i].addEventListener(eventStatus, function() {
+                fetachIFrame(i);
+            });
+        }
     }
 
-    function setMapContentWithWidthOfDevice() {
-        var width = $(window).width();
-        var imgs = ['/images/0225svg-16.svg', '/images/map_工作區域 1.svg', '/images/map_工作區域 1.svg', '/images/map_工作區域 1.svg'];
-        var index = Math.floor(width / 768);
-        // if width > 768 index becomes to one else becomes to zero
-        loadImgWithUrl(imgs[index]);
+    function fetachIFrame(index) {
+        // 未完成
+        if (index == 0 || index == 3 || index == 4)
+            return;
+        replaceIntroContentByIndex(index);
+        startSpinning();
+        stopSpinningAfterTimeOut();
     }
 
-    function initialPlaceWidth() {
-        var initialWidth = $(window).width();
-        scalePlaceSize(initialWidth * ration);
+    function stopSpinningAfterTimeOut() {
+        setTimeout(function() {
+            stopSpinning();
+            showPlaceIntroDetail();
+        }, 2500);
     }
 
-    function replaceContentWithModel(index) {
+    function stopSpinning() {
+        $('.spinner-container').hide();
+    }
+
+    function showPlaceIntroDetail() {
+        $('.hide-container').fadeIn();
+    }
+    
+    function replaceIntroContentByIndex(index) {
         model = data[index];
+        replaceIntroContent(model);
+    }
+
+    function replaceIntroContent(model) {
+        replaceMainPhotoContent(model);
+        replaceMainDisplayContent(model);
+        replaceHideTrackContent(model);
+    }
+
+    function replaceMainPhotoContent(model) {
         $('.image-content .road-text-image').attr('src', model.roadPhoto);
         $('.image-content .main-image').attr('src', model.mainPhoto);
+    }
+
+    function replaceMainDisplayContent(model) {
         $('#titleIFrame').attr('src', model.titleIFrame);
         $('.functionailty-area p').html(model.trackIntro);
         $('#google-iframe').attr('src', model.googleMapSrc);
+    }
+
+    function replaceHideTrackContent(model) {
         $('.intro-content p').html(model.titleIntro);
         $('#track-iframe1').attr('src', model.trackIFrame1);
         $('#track-iframe2').attr('src', model.trackIFrame2);
@@ -115,53 +155,54 @@ $(document).ready(function() {
         $('#track-iframe4').attr('src', model.trackIFrame4);
         $('#track-iframe5').attr('src', model.trackIFrame5);
     }
-      
+    
     function startSpinning() {
         $('.spinner-container').show();
     }
 
-    function stopSpinning() {
-        $('.spinner-container').hide();
-    }
-
-    function fetachIFrame(index) {
-        // 未完成
-        if (index == 0 || index == 3 || index == 4)
-            return;
-        replaceContentWithModel(index);
-        startSpinning();
-        setTimeout(function() {
-            stopSpinning();
-            $('.hide-container').fadeIn();
-        }, 2500);
-    }
-    
-    function addEvent() {
-        for (let i = 0; i < number; i++) {
-            places[i].addEventListener('click', function() {
-                fetachIFrame(i);
-            }, false);
-        }
+    function initializePlaceSize() {
+        var windowWidth = $(window).width();
+        scalePlaceSize(windowWidth * scaleRationOfPlace);
     }
 
     function scalePlaceSize(size) {
-        for (let i = 0; i < number; i++) {
-            $('.place' + String(i + 1)).width(size);
-            $('.place' + String(i + 1)).height(size);
+        for (let i = 0; i < numberOfPlace; i++) {
+            var place = '.place' + String(i + 1);
+            setPlaceHeightAndWidth(place, size);
         }
-        console.log('Dynamic setting the width of all points to: ' + String(size));
+    }
+
+    function setPlaceHeightAndWidth(place, size) {
+        $(place).width(size);
+        $(place).height(size);
+    }
+
+    $(window).resize(function() {
+        var windowWidth = $(window).width();
+        var size = windowWidth * scaleRationOfPlace;
+        scalePlaceSize(size);
+        setMapImgByWidthOfDevice();
+    });
+
+    function setMapImgByWidthOfDevice() {
+        var windowWidth = $(window).width();
+        var imgs = ['/images/0225svg-16.svg', '/images/map_工作區域 1.svg', '/images/map_工作區域 1.svg', '/images/map_工作區域 1.svg'];
+        var imgSelectedIndex = Math.floor(windowWidth / 768);
+        // if width > 768 index becomes to one else becomes to zero
+        loadMapImageWidthUrl(imgs[imgSelectedIndex]);
+    }
+
+    function loadMapImageWidthUrl(url) {
+        // when attr load completely then call scaleSpinnerHeight
+        $('#map').attr('src', url).load(function() {
+            // dynamic setting the height of the spinner
+            // because the height of the image has changed
+            scaleSpinnerHeight();
+        });
     }
 
     function scaleSpinnerHeight() {
         var height = $('.map-content #map').height();
         $('.spinner-container').height(height);
-        console.log('scale height: ' + height);
     }
-
-    $(window).resize(function() {
-        var deltaWindowSize = $(window).width();
-        var size = deltaWindowSize * ration;
-        scalePlaceSize(size);
-        setMapContentWithWidthOfDevice();
-    });
 });

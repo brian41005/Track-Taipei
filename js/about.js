@@ -1,8 +1,8 @@
 $(document).ready(function() {
-    init();
-    function init() {
+    initializeHeaderStatus();
+    
+    function initializeHeaderStatus() {
         $('.header-about p').addClass('header-info-item-hover');
         $('.header-music p').removeClass('header-info-item-hover');
     }
-
 });
