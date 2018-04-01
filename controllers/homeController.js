@@ -11,7 +11,7 @@ module.exports = function(app, player) {
     res.render('pages/about');
   });
 
-  app.get('/entry', function(req, res) {
+  app.get('/', function(req, res) {
     res.render('pages/entry');
   });
 
