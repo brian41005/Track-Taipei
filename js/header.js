@@ -11,7 +11,7 @@ $(document).ready(() => {
     });
 
     $('.header-title img').click(function() {
-        var href = '/entry'
+        var href = '/'
         setWindowLocationHref(href);
     });
 
