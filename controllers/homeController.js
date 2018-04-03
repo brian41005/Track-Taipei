@@ -9,7 +9,7 @@ module.exports = function (app, player) {
   //  res.render('pages/entry');
   //});
 
-  app.get('/run', function (req, res) {
+  app.get('/', function (req, res) {
     res.render('pages/run');
   });
 }

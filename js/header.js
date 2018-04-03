@@ -1,7 +1,7 @@
 
 $(document).ready(() => {
     $('.header-music p').click(function() {
-        var href = '/run';
+        var href = '/';
         setWindowLocationHref(href);
     });
 
@@ -10,11 +10,13 @@ $(document).ready(() => {
         setWindowLocationHref(href);
     });
 
+    /*
     $('.header-title img').click(function() {
         var href = '/'
         setWindowLocationHref(href);
     });
-
+    */
+   
     function setWindowLocationHref(href) {
         window.location.href = href;
     }
