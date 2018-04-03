@@ -1,6 +1,4 @@
 module.exports = function (app, player) {
-  var model = require('../model/mdoel');
-
   app.get('/about', function (req, res) {
     res.render('pages/about');
   });

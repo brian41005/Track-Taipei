@@ -28,9 +28,14 @@ $(document).ready(() => {
             var eventStatus = 'click';
             points[i].addEventListener(eventStatus, function() {
                 hideAllIFrame();
+                hideTrackIntro();
                 showIFrameByName('#track-iframe' + String(i + 1));
             });
         }
+    }
+
+    function hideTrackIntro() {
+        $('.functionailty-area p').hide('slow');
     }
 
     function hideAllIFrame() {
