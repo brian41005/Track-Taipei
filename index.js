@@ -3,15 +3,13 @@ var app = express();
 var bodyParser = require('body-parser');
 var player = require('play-sound')(opts = {})
 
-app.set('port', (process.env.PORT || 80));
+app.set('port', (process.env.PORT || 5000));
 
 app.use('/css', express.static('./css'));
 app.use('/images', express.static('./images'));
 app.use('/js', express.static('./js'));
 app.use('/sound', express.static('./sound'));
 
-// views is directory for all template files
-//app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 // Process application/x-www-form-urlencoded
