@@ -14,8 +14,6 @@ body {
     display: none;
 }
 
-
-
 .map-content {
     position: relative;
 }
@@ -30,27 +28,27 @@ body {
 }
 
 .place1 {
-    top: 26%;
-    left: 20%;
+    top: 21%;
+    left: 18%;
 }
 
 .place2 {
-    top: 34%;
-    left: 58%;
+    top: 28%;
+    left: 55%;
 }
 
 .place3 {
-    top: 50%;
+    top: 48%;
     left: 48%;
 }
 
 .place4 {
-    top: 55%;
+    top: 50%;
     left: 15%;
 }
 
 .place5 {
-    top: 66%;
+    top: 60%;
     left: 70%;    
 }
 
