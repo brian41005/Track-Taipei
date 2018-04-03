@@ -12,7 +12,8 @@ body {
     margin: 0 auto;
     padding-left: 10%;
     padding-right: 10%;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 70px;
 }
 
 .image-content {
@@ -49,31 +50,6 @@ button {
     height: 50px;
     width: 100px
 }
-
-#close {
-    display: inline-block;
-    border: 0px solid rgb(24, 30, 93);
-    width: 50px;
-}
-
-.close-area {
-    display: inline-block;
-    float: right;
-    margin-top: 15px;
-}
-
-.close-area:hover {
-    opacity: 0.5;
-}
-
-#backImg {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    float: right;
-}
-
-
 
 button:hover {
     color: white;

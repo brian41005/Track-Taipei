@@ -18,16 +18,3 @@
 .image-content-about img {
     width: 100%;
 }
-
-.image-content-about #firstImg {
-    margin-top: 400px;
-}
-
-.header {
-    position: fixed;
-}
-
-.image-main-content {
-    width: 100%;
-    position: fixed;
-}

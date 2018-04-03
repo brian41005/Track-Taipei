@@ -2,7 +2,7 @@
 $(document).ready(() => {
     var points = [];
     var scaleRationOfPoint = 100 / 768;
-    numberOfPoint = 5;
+    numberOfPoint = 3;
 
     initializePageStatus();
 
@@ -64,7 +64,8 @@ $(document).ready(() => {
     $(window).resize(function() {
         var windowWidth = $(window).width();
         var size = windowWidth * scaleRationOfPoint;
-        scalePointsSize(size);
+        console.log(';ccccc');
+        scalePointSize(size);
     });
 
     function scalePointSize(size) {
@@ -101,13 +102,17 @@ $(document).ready(() => {
         widget.pause();
     }
 
-    $('#track').on('click', function() {
+    function showTrackDetail() {
         activeTrackButton();
         unActiveIntroButton();
         stopTitleIFrame();
         $('.functionailty-area p').show();
         $('.display-content').hide('slow');
         showTargetAfterTimeOut('.track-container');
+    }
+
+    $('#track').on('click', function() {
+        showTrackDetail();
     });
 
     $('#intro').on('click', function() {

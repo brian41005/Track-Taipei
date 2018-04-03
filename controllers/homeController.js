@@ -19,4 +19,9 @@ module.exports = function(app, player) {
     res.render('pages/run');
   });
 
+  app.post('/model', function(req, res) {
+    var index = req.body.data;
+    return model[index];
+    res.json(model[index]);
+  });
 }
