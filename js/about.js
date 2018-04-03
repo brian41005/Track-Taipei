@@ -3,7 +3,9 @@ $(document).ready(function() {
 
     function init() {
         initializeHeaderStatus();
-        setImgMargin();
+        setTimeout(() => {
+            setImgMargin();
+        }, 1000);
     }
 
     function initializeHeaderStatus() {
@@ -16,7 +18,7 @@ $(document).ready(function() {
     });
 
     function setImgMargin() {
-        var height = $('.image-main-content').height();
+        var height = $('.image-main-content img').height();
         $('#firstImg').css('margin-top', height);
         console.log('height' + height);
     }

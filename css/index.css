@@ -33,7 +33,7 @@ body {
 .functionailty-area p {
     margin-top: 7%;
     font-size: 15px;
-    color: #0a418c;
+    color: rgb(24, 30, 93);
     display: none;
 }
 
@@ -92,7 +92,7 @@ button:hover {
     text-align: justify;
     margin-top: 60px;
     margin-bottom: 60px;
-    color: #0a418c;
+    color: rgb(24, 30, 93);
 }
 
 .intro-content p {
