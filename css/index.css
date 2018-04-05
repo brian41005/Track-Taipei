@@ -35,6 +35,8 @@ body {
     font-size: 15px;
     color: rgb(24, 30, 93);
     display: none;
+    letter-spacing: 3px;
+    font-weight: 500;
 }
 
 
@@ -42,12 +44,17 @@ button {
     color: rgb(24, 30, 93);
     font-weight: bold;
     background-color: white;
-    border: 2px solid rgb(24, 30, 93);
+    border: 1px solid rgb(24, 30, 93);
     border-radius: 30px;
-    font-size: 18px;
+    font-size: 15px;
     box-sizing: border-box;
     height: 50px;
-    width: 100px
+    width: 100px;
+    letter-spacing: 5px;
+}
+
+#track {
+    letter-spacing: 1px;
 }
 
 #close {
@@ -93,6 +100,8 @@ button:hover {
     margin-top: 60px;
     margin-bottom: 60px;
     color: rgb(24, 30, 93);
+    font-weight: 500;
+    letter-spacing: 3px;
 }
 
 .intro-content p {
@@ -225,6 +234,6 @@ button:hover {
     button {
         height: 40px;
         width: 75px;
-        font-size: 16px;
+        font-size: 14px;
     }
 }

@@ -39,6 +39,8 @@ $(document).ready(function() {
             top3: '55',
             left3: '45',
         }];
+    
+    // add br
 
     data = [{
         mainPhoto: '/images/大稻埕.svg',
