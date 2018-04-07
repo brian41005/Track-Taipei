@@ -17,7 +17,6 @@ body {
 }
 
 
-
 .map-content {
     position: relative;
 }
@@ -98,6 +97,27 @@ body {
     }
 }
 
+@media (min-width: 760px) {
+
+    .track-music-content {
+        display: inline-block;
+        width: 45%;
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+    .track-music-content iframe {
+        padding-bottom: 120px;
+    }
+
+    .track-content {
+        display: inline-block;
+        width: 40%;
+        margin-top: 10px;
+    }
+
+}
+
 @media (max-width: 788px) { 
     @keyframes float {
         0% {
@@ -110,6 +130,8 @@ body {
             transform: translatey(0px);
         }
     }
+
+
 }
 
 @media (max-width: 575px) { 

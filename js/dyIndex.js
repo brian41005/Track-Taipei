@@ -1,7 +1,7 @@
 
 $(document).ready(() => {
     var points = [];
-    var scaleRationOfPoint = 100 / 768;
+    var scaleRationOfPoint = 70 / 768;
     numberOfPoint = 3;
 
     initializePageStatus();
@@ -69,7 +69,6 @@ $(document).ready(() => {
     $(window).resize(function() {
         var windowWidth = $(window).width();
         var size = windowWidth * scaleRationOfPoint;
-        console.log(';ccccc');
         scalePointSize(size);
     });
 

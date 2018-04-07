@@ -43,7 +43,7 @@
 
 .header-music, .header-about {
     display: inline-block;
-    margin-left: 5px;
+    margin-left: 10px;
     height: 55px;
 }
 
@@ -63,6 +63,12 @@
 
 
 .header-info-item-hover {
-    border-bottom: 3px solid rgb(143, 143, 143);
-    
+    border-bottom: 3px solid rgba(24, 30, 93, .4);   
+}
+
+
+@media (min-width: 758px) { 
+    .header {
+        margin-top: 10px;
+    }
 }
