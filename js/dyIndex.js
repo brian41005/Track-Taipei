@@ -62,15 +62,26 @@ $(document).ready(() => {
     }
 
     function initialPointSize() { // initialize the width of all points by the width of the window
-        var windowWidth = $(window).width();
-        scalePointSize(windowWidth * scaleRationOfPoint);
+        //var windowWidth = $(window).width();
+        //scalePointSize(windowWidth * scaleRationOfPoint);
+        scalePointSize(calculatePointSize());
     }
 
     $(window).resize(function() {
+        //var windowWidth = $(window).width();
+        //var size = windowWidth * scaleRationOfPoint;
+        // scalePointSize(size);
+        scalePointSize(calculatePointSize());
+    });
+
+    function calculatePointSize() {
         var windowWidth = $(window).width();
         var size = windowWidth * scaleRationOfPoint;
-        scalePointSize(size);
-    });
+        if (windowWidth > 760) {
+            size /= 2;
+        }
+        return size
+    }
 
     function scalePointSize(size) {
         for (let i = 0; i < numberOfPoint; i++) {
