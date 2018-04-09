@@ -18,12 +18,12 @@ $(document).ready(function() {
             top3: '60',
             left3: '52',
         }, {
-            top1: '20',
-            left1: '35',
+            top1: '23',
+            left1: '40',
             top2: '40',
-            left2: '55',
+            left2: '57',
             top3: '65',
-            left3: '40',
+            left3: '43',
         }, {
             top1: '15',
             left1: '42',

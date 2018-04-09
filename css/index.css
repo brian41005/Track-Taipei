@@ -50,11 +50,18 @@ button {
     box-sizing: border-box;
     height: 50px;
     width: 80px;
-    letter-spacing: 5px;
 }
 
 #track {
     letter-spacing: 1px;
+    text-align: center;
+    text-indent: 1px;
+}
+
+#intro {
+    text-align: center;
+    text-indent: 5px;
+    letter-spacing: 5px;
 }
 
 #close {

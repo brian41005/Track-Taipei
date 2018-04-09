@@ -78,7 +78,7 @@ $(document).ready(() => {
         var windowWidth = $(window).width();
         var size = windowWidth * scaleRationOfPoint;
         if (windowWidth > 760) {
-            size /= 2;
+            size *= 0.6;
         }
         return size
     }
