@@ -98,7 +98,10 @@ body {
 }
 
 @media (min-width: 760px) {
-
+    .track-content img {
+        width: 50%;
+    }
+    /*
     .track-music-content {
         display: inline-block;
         width: 45%;
@@ -115,6 +118,7 @@ body {
         width: 40%;
         margin-top: 10px;
     }
+    */
 
 }
 

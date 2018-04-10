@@ -2,44 +2,82 @@ $(document).ready(function() {
     var scaleRationOfPlace = 100 / 768;
     var places = [];
     numberOfPlace = 5;
+    tabletPosition = [{
+        top1: '7',
+        left1: '48',
+        top2: '34',
+        left2: '50',
+        top3: '66',
+        left3: '46',
+    }, {
+        top1: '17',
+        left1: '53',
+        top2: '37',
+        left2: '44',
+        top3: '60',
+        left3: '52',
+    }, {
+        top1: '23',
+        left1: '43',
+        top2: '45',
+        left2: '55',
+        top3: '67',
+        left3: '47',
+    }, {
+        top1: '20',
+        left1: '47',
+        top2: '49',
+        left2: '52',
+        top3: '65',
+        left3: '44',
+    }, {
+        top1: '14',
+        left1: '58',
+        top2: '29',
+        left2: '47',
+        top3: '60',
+        left3: '49',
+    }];
 
-        pointsPosition = [{
-            top1: '5',
-            left1: '45',
-            top2: '31',
-            left2: '50',
-            top3: '60',
-            left3: '40',
-        }, {
-            top1: '10',
-            left1: '53',
-            top2: '35',
-            left2: '35',
-            top3: '60',
-            left3: '52',
-        }, {
-            top1: '23',
-            left1: '40',
-            top2: '40',
-            left2: '57',
-            top3: '65',
-            left3: '43',
-        }, {
-            top1: '15',
-            left1: '42',
-            top2: '45',
-            left2: '50',
-            top3: '60',
-            left3: '36',
-        }, {
-            top1: '10',
-            left1: '61',
-            top2: '20',
-            left2: '40',
-            top3: '55',
-            left3: '45',
-        }];
+    pointsPosition = [{
+        top1: '5',
+        left1: '45',
+        top2: '31',
+        left2: '50',
+        top3: '60',
+        left3: '40',
+    }, {
+        top1: '10',
+        left1: '53',
+        top2: '35',
+        left2: '35',
+        top3: '60',
+        left3: '52',
+    }, {
+        top1: '23',
+        left1: '40',
+        top2: '40',
+        left2: '57',
+        top3: '65',
+        left3: '43',
+    }, {
+        top1: '15',
+        left1: '42',
+        top2: '45',
+        left2: '50',
+        top3: '60',
+        left3: '36',
+    }, {
+        top1: '10',
+        left1: '61',
+        top2: '20',
+        left2: '40',
+        top3: '55',
+        left3: '45',
+    }];        
     
+    positions = [pointsPosition, tabletPosition];
+
     // add br
 
     data = [{
@@ -73,15 +111,18 @@ $(document).ready(function() {
         trackIFrame2: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/423564165&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
         trackIFrame3: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/423564150&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
     }, {
+        // <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src=""></iframe>
+        // <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src=""></iframe>
+        // <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src=""></iframe> 
         mainPhoto: '/images/龍山.svg',
-        titleIFrame: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/423564201&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        titleIFrame: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/427225557&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
         titleIntro: '艋岬，又名萬華，是台北市開發最早的地方。而「龍山寺」是當地居 民信仰、活動、集會和指揮的中心，保佑著過去渡海來台的先民平安順利，富有早期居民打拚、奮鬥的文化歷史。龍山寺平日香火鼎盛，其獨特的建築特色極具藝術價值，附近的懷舊氣氛更讓龍山寺成為台北著名的觀光景點。',
         googleMapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.468451959292!2d121.5164839646644!3d25.05210690266453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96cf2fee5ad%3A0x19d4a2f503dc959c!2zMTAz5Y-w5YyX5biC5aSn5ZCM5Y2A5aSq5Y6f6LevOTflt7c!5e0!3m2!1szh-TW!2stw!4v1518844031617',
         trackIntro: '轉角後傳來陣陣誦經<br>定時敲起的木魚、銅鈴<br>耳邊的呢喃是心中的渴求<br>亦是人們共同懷有的虔誠與執念',
         trackMapImg: 'images/龍山_track.svg', 
-        trackIFrame1: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/423561183&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
-        trackIFrame2: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/423561174&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
-        trackIFrame3: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/423561171&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        trackIFrame1: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/427225521&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        trackIFrame2: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/427225494&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        trackIFrame3: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/427225347&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
     }, {
         mainPhoto: '/images/羅文化.svg',
         titleIFrame: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/423564201&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
@@ -157,6 +198,11 @@ $(document).ready(function() {
     function showPlaceIntroDetail() {
         $('.hide-container').fadeIn();
     }
+
+    function getDeviceWidth() {
+        var windowWidth = $(window).width();
+        return windowWidth;
+    }
     
     function replaceIntroContentByIndex(index) {
         model = data[index];
@@ -164,7 +210,11 @@ $(document).ready(function() {
         replaceMainPhotoContent(model);
         replaceMainDisplayContent(model, title[index]);
 
-        posModel = pointsPosition[index];
+        console.log(getDeviceWidth());
+        console.log(positions[0]);
+        
+        posModel = positions[Math.floor(getDeviceWidth() / 760)][index];
+        //posModel = pointsPosition[index];
         replaceTrackContent(model, posModel);
 
     }
