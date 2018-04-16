@@ -207,7 +207,7 @@ $(document).ready(function() {
 
     function replaceIntroContentByIndex(index) {
         model = data[index];
-        var title = ['看看是誰組成大稻埕吧', '看看是誰組成太原路吧', '看看是誰組成東門市場吧', '看看是誰組成龍山寺吧', '看看是誰組成溫羅玎文化圈吧！'];
+        var title = ['看看是誰組成大稻埕吧', '看看是誰組成太原路吧', '看看是誰組成東門市場吧', '看看是誰組成龍山寺吧', '看看是誰組成溫羅汀文化圈吧！'];
         replaceMainPhotoContent(model);
         replaceMainDisplayContent(model, title[index]);
 
