@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     var scaleRationOfPlace = 100 / 768;
     var places = [];
     numberOfPlace = 5;
@@ -83,14 +83,14 @@ $(document).ready(function() {
         // still need to change IFrame URL
         // titleIFrame, trackIFrame1, trackIFrame2, trackIFrame3
         mainPhoto: '/images/大稻埕.svg',
-        titleIFrame: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/423561195&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        titleIFrame: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/444727326&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
         titleIntro: '大稻埕是臺北市大同區西南部的一個傳統地域名稱，18世紀末，因淡水港的開放後成為商貿繁榮、人文薈萃之地。大稻埕擁有華麗的巴洛克式建築、傳統的閩南平房、明亮的紅磚洋樓，不論是古蹟建築、傳統民俗、茶行、布行、中藥材行、在地美食等，到處都有舊城的歷史軌跡。而如今因著擁有深厚歷史傳承的百年老舖與創意街區，打造出大稻埕新生活美學。',
         googleMapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.279882060915!2d121.50741011509105!3d25.058501243462604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a915c7d73db9%3A0xb031aa4cebcf6cea!2zMTAz5Y-w5YyX5biC5aSn5ZCM5Y2A6L-q5YyW6KGX5LiA5q61!5e0!3m2!1szh-TW!2stw!4v1523884654831',
         trackIntro: '時光荏苒<br>無船的碼頭河川依然湧動<br>街道裡乾貨與藥材香氣依舊<br>穿梭於不同時間與空間<br>我聽到新舊融合譜出的節奏',
         trackMapImg: 'images/大稻埕_track.svg',
-        trackIFrame1: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/423561183&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
-        trackIFrame2: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/423561174&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
-        trackIFrame3: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/423561171&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        trackIFrame1: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/444727374&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        trackIFrame2: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/444727356&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        trackIFrame3: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/444727350&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
     }, {
         // <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.4380170403642!2d121.51378491509108!3d25.053139043677866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96c997b2e3f%3A0x6cab14efb813bd7!2zMTAz5Y-w5YyX5biC5aSn5ZCM5Y2A5aSq5Y6f6Lev!5e0!3m2!1szh-TW!2stw!4v1523884576532" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         mainPhoto: '/images/main1.svg',
@@ -125,15 +125,16 @@ $(document).ready(function() {
     }, {
         // still need to change IFrame URL
         // titleIFrame, trackIFrame1, trackIFrame2, trackIFrame3
+
         mainPhoto: '/images/羅文化.svg',
-        titleIFrame: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/423564201&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        titleIFrame: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/444727842&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
         titleIntro: '溫羅汀是在台灣大學與師範大學中間，由溫州街、羅斯福路、汀州街一帶交織而成的區域。在這人文空間最密集的區域，大大小小的獨立書店、咖啡廳、live house聚集於此，成為可觀的人文風景。',
         googleMapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.3377409671516!2d121.53104391509052!3d25.02260984490175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9889a450a73%3A0xaffa2ef96fa39ee5!2zMTA25Y-w5YyX5biC5aSn5a6J5Y2A5rqr5bee6KGX!5e0!3m2!1szh-TW!2stw!4v1523884692976',
         trackIntro: '翻動書頁，細細交談<br>字句在空氣中飄盪<br>安靜在這裡似乎成為一種聲音',
         trackMapImg: 'images/羅文化_track.svg',
-        trackIFrame1: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/423561183&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
-        trackIFrame2: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/423561174&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
-        trackIFrame3: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/423561171&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        trackIFrame1: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/444727860&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        trackIFrame2: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/444727851&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
+        trackIFrame3: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/444727845&color=%232d0d15&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true',
     }];
 
 
@@ -170,7 +171,7 @@ $(document).ready(function() {
     function bindEventOfClickPlace() {
         for (let i = 0; i < numberOfPlace; i++) {
             var eventStatus = 'click';
-            places[i].addEventListener(eventStatus, function() {
+            places[i].addEventListener(eventStatus, function () {
                 fetachIFrame(i);
             });
         }
@@ -186,7 +187,7 @@ $(document).ready(function() {
     }
 
     function stopSpinningAfterTimeOut() {
-        setTimeout(function() {
+        setTimeout(function () {
             stopSpinning();
             showPlaceIntroDetail();
         }, 2500);
@@ -230,7 +231,7 @@ $(document).ready(function() {
         $('#google-iframe').attr('src', model.googleMapSrc);
     }
 
-    function  replaceTrackContent(model, posModel) {
+    function replaceTrackContent(model, posModel) {
         replaceHideTrackContent(model, posModel);
     }
 
@@ -278,7 +279,7 @@ $(document).ready(function() {
         $(place).height(size);
     }
 
-    $(window).resize(function() {
+    $(window).resize(function () {
         var windowWidth = $(window).width();
         var size = windowWidth * scaleRationOfPlace;
         scalePlaceSize(size);
@@ -295,7 +296,7 @@ $(document).ready(function() {
 
     function loadMapImageWidthUrl(url) {
         // when attr load completely then call scaleSpinnerHeight
-        $('#map').attr('src', url).load(function() {
+        $('#map').attr('src', url).load(function () {
             // dynamic setting the height of the spinner
             // because the height of the image has changed
             scaleSpinnerHeight();
